@@ -9,8 +9,7 @@
   "scripts": {
     "test": "cypress run --reporter mochawesome",
     "test:open": "cypress open",
-    "open-report": "start ./mochawesome-report/mochawesome.html",
-    "open-json": "start ./mochawesome-report/mochawesome.json"
+    "open-report": "start ./mochawesome-report/mochawesome.html"
   },
   "devDependencies": {
     "cypress": "^12.13.0",
