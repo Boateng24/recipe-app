@@ -9,7 +9,9 @@
   "scripts": {
     "test": "cypress run --reporter mochawesome",
     "test:open": "cypress open",
-    "open-report": "start ./mochawesome-report/mochawesome.html"
+    "open:report": "start ./mochawesome-report/mochawesome.html",
+    "report": "yarn run open:report",
+    "open:report:mac": "open -a 'Google Chrome' ./mochawesome-report/mochawesome.html"
   },
   "devDependencies": {
     "cypress": "^12.13.0",
