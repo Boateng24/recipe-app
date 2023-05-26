@@ -1,0 +1,19 @@
+{
+  "name": "IconAutomatedTest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Amali-Tech/IconAutomatedTest.git",
+  "author": "tuffourboateng-amalitech <99021465+tuffourboateng-amalitech@users.noreply.github.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "cypress run --reporter mochawesome",
+    "test:open": "cypress open",
+    "open-report": "start ./mochawesome-report/mochawesome.html",
+    "open-json": "start ./mochawesome-report/mochawesome.json"
+  },
+  "devDependencies": {
+    "cypress": "^12.13.0",
+    "mochawesome": "^7.1.3"
+  }
+}
