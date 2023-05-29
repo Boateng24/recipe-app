@@ -2,6 +2,13 @@
 import { defineConfig } from "cypress";
 // cypress.config.js
 export default defineConfig({
+  reporter: "mochawesome",
+  reporterOptions:{
+    "reportDir": "cypress/reports",
+    "overwrite": true,
+    "html": true,
+    "json": false
+  },
   env: {
     NODE_ENV: "test",
   },

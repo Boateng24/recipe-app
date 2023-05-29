@@ -1,5 +1,5 @@
-import { authSelectors } from "../selectors/authSelectors";
-import authData from '../fixtures/authdata.json';
+import { authSelectors } from "../../selectors/authSelectors";
+import authData from '../../fixtures/authdata.json';
 
 describe('login page tests', () => {
   it('it should successfully visit the login page', () => {

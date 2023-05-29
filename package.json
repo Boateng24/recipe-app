@@ -7,7 +7,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "cypress run --reporter mochawesome",
+    "test": "cypress run runTests",
     "test:open": "cypress open",
     "open:report": "start ./mochawesome-report/mochawesome.html",
     "report": "yarn run open:report",
