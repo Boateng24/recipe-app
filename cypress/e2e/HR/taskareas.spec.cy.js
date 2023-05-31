@@ -27,7 +27,7 @@ describe("HR configuration Task Areas tests", () => {
     cy.contains('Task Area updated successfully', {matchCase:false}).should('be.visible');
  })
 
- it.only("delete a task area", () => {
+ it("delete a task area", () => {
     cy.AdminLogin()
     cy.get(HRSelectors.accordionIcon).eq(0).click();
     cy.contains(HRSelectors.settingsTab, {matchCase:false}).click()
