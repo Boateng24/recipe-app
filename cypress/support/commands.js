@@ -23,6 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import { authSelectors } from "../selectors/authSelectors";
 
 Cypress.Commands.add("runTests", () => {
   // Get a list of all test files in the e2e folder and subfolders
@@ -33,12 +34,18 @@ Cypress.Commands.add("runTests", () => {
     (spec) => Cypress._.trimStart(spec, "/") + ".spec.cy.js"
   );
 
-  // Disable the default Mochawesome reporter
-  Cypress.config("reporter", null);
-
   // Run tests using Cypress' run command
   cy.task("mocha", {
     files: testFiles,
-    reporterOptions: { reportDir: "cypress/reports" },
+    reporterOptions: { reportDir: "/mochawesome-report" },
   });
+});
+
+// Login as Admin
+Cypress.Commands.add("AdminLogin", () => {
+  cy.visit("/");
+  cy.contains(authSelectors.loginHeading);
+  cy.get(authSelectors.emailId).type(Cypress.env("adminEmail"));
+  cy.get(authSelectors.passwordId).type(Cypress.env("adminPassword"));
+  cy.get(authSelectors.signInbutton).click();
 });

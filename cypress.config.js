@@ -4,13 +4,14 @@ import { defineConfig } from "cypress";
 export default defineConfig({
   reporter: "mochawesome",
   reporterOptions:{
-    "reportDir": "cypress/reports",
     "overwrite": true,
     "html": true,
     "json": false
   },
   env: {
     NODE_ENV: "test",
+    adminEmail: 'me@you.com',
+    adminPassword: '11223344'
   },
   defaultCommandTimeout: 30000,
   chromeWebSecurity: false,
