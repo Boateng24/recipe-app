@@ -7,13 +7,14 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "cypress run runTests",
+    "test": "cypress run runTests && start ./mochawesome-report/mochawesome.html",
     "test:open": "cypress open",
     "open:report": "start ./mochawesome-report/mochawesome.html",
     "report": "yarn run open:report",
     "open:report:mac": "open ./mochawesome-report/mochawesome.html"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "cypress": "^12.13.0",
     "mochawesome": "^7.1.3"
   }
