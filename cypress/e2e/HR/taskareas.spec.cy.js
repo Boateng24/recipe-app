@@ -34,6 +34,6 @@ describe("HR configuration Task Areas tests", () => {
    cy.get(HRSelectors.editIcon).first().click();
    cy.contains("Delete", { matchCase: false }).click();
    cy.contains("button", "Replace and delete", { matchCase: false }).click();
-   // cy.contains('Task Area updated successfully', {matchCase:false}).should('be.visible');
+   // cy.contains('Task Area deleted successfully', {matchCase:false}).should('be.visible');
  })
 })
