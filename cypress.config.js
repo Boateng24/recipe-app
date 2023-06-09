@@ -2,6 +2,7 @@
 import { defineConfig } from "cypress";
 // cypress.config.js
 export default defineConfig({
+  projectId: "t3a8hb",
   reporter: "mochawesome",
   reporterOptions:{
     "overwrite": true,
