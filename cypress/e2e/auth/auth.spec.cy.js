@@ -8,7 +8,7 @@ describe('login page tests', () => {
     cy.get(authSelectors.welcomeText).should("exist")
   })
 
-  it('it should successfully sign in a registered user with valid username and password', () => {
+  it('it should successfully sign in a registered user with valid email and password', () => {
     cy.visit('/')
     cy.get(authSelectors.emailId).type(authData.email)
     cy.get(authSelectors.passwordId).type(authData.password)

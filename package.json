@@ -11,7 +11,8 @@
     "test:open": "cypress open",
     "open:report": "start ./mochawesome-report/mochawesome.html",
     "report": "yarn run open:report",
-    "open:report:mac": "open ./mochawesome-report/mochawesome.html"
+    "open:report:mac": "open ./mochawesome-report/mochawesome.html",
+    "cypress-cloud": "npx cypress run --record --key f73fa162-2dbc-43d1-b305-7c25b66058bd"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
