@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-06-09T12:40:23.324Z",
+    "end": "2023-06-09T12:40:52.670Z",
+    "duration": 29346,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b242ec1e-891a-4b4f-90d4-8f57f83f242f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\auth\\auth.spec.cy.js",
+      "file": "cypress\\e2e\\auth\\auth.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ad6b82b6-0b6a-4779-88ba-5ca8997d108b",
+          "title": "login page tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "it should successfully visit the login page",
+              "fullTitle": "login page tests it should successfully visit the login page",
+              "timedOut": null,
+              "duration": 13107,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.contains(_authSelectors.authSelectors.loginHeading).should(\"be.visible\");\ncy.get(_authSelectors.authSelectors.welcomeText).should(\"exist\");",
+              "err": {},
+              "uuid": "7dbb391a-6677-4ae1-b6b4-22bf43fcc2cb",
+              "parentUUID": "ad6b82b6-0b6a-4779-88ba-5ca8997d108b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "it should successfully sign in a registered user with valid email and password",
+              "fullTitle": "login page tests it should successfully sign in a registered user with valid email and password",
+              "timedOut": null,
+              "duration": 4163,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get(_authSelectors.authSelectors.emailId).type(_authdata.default.email);\ncy.get(_authSelectors.authSelectors.passwordId).type(_authdata.default.password);\ncy.get(_authSelectors.authSelectors.signInbutton).click();\ncy.get(_authSelectors.authSelectors.welcomeUser).should('be.visible');\ncy.contains(_authSelectors.authSelectors.welcomeMsg1, {\n  matchCase: false\n}).should(\"be.visible\");\ncy.contains(_authSelectors.authSelectors.welcomeMsg2, {\n  matchCase: false\n}).should(\"be.visible\");",
+              "err": {},
+              "uuid": "d423fd1a-de8a-4720-9690-7abd5928e245",
+              "parentUUID": "ad6b82b6-0b6a-4779-88ba-5ca8997d108b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "it should successfully sign in a registered user with valid username and password",
+              "fullTitle": "login page tests it should successfully sign in a registered user with valid username and password",
+              "timedOut": null,
+              "duration": 3280,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get(_authSelectors.authSelectors.emailId).type(_authdata.default.username);\ncy.get(_authSelectors.authSelectors.passwordId).type(_authdata.default.password);\ncy.get(_authSelectors.authSelectors.signInbutton).click();\ncy.get(_authSelectors.authSelectors.welcomeUser).should('be.visible');\ncy.contains(_authSelectors.authSelectors.welcomeMsg1, {\n  matchCase: false\n}).should(\"be.visible\");\ncy.contains(_authSelectors.authSelectors.welcomeMsg2, {\n  matchCase: false\n}).should(\"be.visible\");",
+              "err": {},
+              "uuid": "47e0d079-5a0d-4c2b-8d75-8b20aebd9858",
+              "parentUUID": "ad6b82b6-0b6a-4779-88ba-5ca8997d108b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should prompt for required field for the username or email input field",
+              "fullTitle": "login page tests should prompt for required field for the username or email input field",
+              "timedOut": null,
+              "duration": 1489,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get(_authSelectors.authSelectors.passwordId).type(_authdata.default.password);\ncy.get(_authSelectors.authSelectors.signInbutton).click();\ncy.get(_authSelectors.authSelectors.requiredEmailError).next().should(\"have.text\", \"This field is required\", {\n  matchCase: false\n}).and(\"have.css\", \"color\", \"rgb(239, 68, 68)\");",
+              "err": {},
+              "uuid": "b974f33e-38c8-4ae8-9d49-54969db67032",
+              "parentUUID": "ad6b82b6-0b6a-4779-88ba-5ca8997d108b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should prompt for required field for the password input field",
+              "fullTitle": "login page tests should prompt for required field for the password input field",
+              "timedOut": null,
+              "duration": 2002,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get(_authSelectors.authSelectors.emailId).type(_authdata.default.email);\ncy.get(_authSelectors.authSelectors.signInbutton).click();\ncy.get(_authSelectors.authSelectors.requiredPasswordError).should(\"have.text\", \"This field is required\", {\n  matchCase: false\n}).and(\"have.css\", \"color\", \"rgb(239, 68, 68)\");",
+              "err": {},
+              "uuid": "31e1688e-a23a-489c-9916-f79faf3031be",
+              "parentUUID": "ad6b82b6-0b6a-4779-88ba-5ca8997d108b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should prompt for Invalid credentials error when an unregistered email is used with a valid password",
+              "fullTitle": "login page tests should prompt for Invalid credentials error when an unregistered email is used with a valid password",
+              "timedOut": null,
+              "duration": 2649,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get(_authSelectors.authSelectors.emailId).type(_authdata.default.invalidEmail);\ncy.get(_authSelectors.authSelectors.passwordId).type(_authdata.default.password);\ncy.get(_authSelectors.authSelectors.signInbutton).click();\ncy.contains(_authSelectors.authSelectors.credentialError, {\n  matchCase: false\n}).should(\"be.visible\").and(\"have.css\", \"color\", \"rgb(239, 68, 68)\");",
+              "err": {},
+              "uuid": "c464afad-0090-4d2c-ab37-b26523f20a00",
+              "parentUUID": "ad6b82b6-0b6a-4779-88ba-5ca8997d108b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should prompt for Invalid credentials error when a registered email is used with an invalid password",
+              "fullTitle": "login page tests should prompt for Invalid credentials error when a registered email is used with an invalid password",
+              "timedOut": null,
+              "duration": 2449,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get(_authSelectors.authSelectors.emailId).type(_authdata.default.email);\ncy.get(_authSelectors.authSelectors.passwordId).type(_authdata.default.invalidPassword);\ncy.get(_authSelectors.authSelectors.signInbutton).click();\ncy.contains(_authSelectors.authSelectors.credentialError, {\n  matchCase: false\n}).should(\"be.visible\").and(\"have.css\", \"color\", \"rgb(239, 68, 68)\");",
+              "err": {},
+              "uuid": "229cbdae-ab0d-42df-9bc3-1b9bbc29d2cc",
+              "parentUUID": "ad6b82b6-0b6a-4779-88ba-5ca8997d108b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7dbb391a-6677-4ae1-b6b4-22bf43fcc2cb",
+            "d423fd1a-de8a-4720-9690-7abd5928e245",
+            "47e0d079-5a0d-4c2b-8d75-8b20aebd9858",
+            "b974f33e-38c8-4ae8-9d49-54969db67032",
+            "31e1688e-a23a-489c-9916-f79faf3031be",
+            "c464afad-0090-4d2c-ab37-b26523f20a00",
+            "229cbdae-ab0d-42df-9bc3-1b9bbc29d2cc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 29139,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
