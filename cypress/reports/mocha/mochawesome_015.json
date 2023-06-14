@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-06-14T11:33:29.365Z",
+    "end": "2023-06-14T11:34:20.378Z",
+    "duration": 51013,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "df426f64-3b86-4d1f-83c2-83b223aac7f0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\HR\\employees.spec.cy.js",
+      "file": "cypress\\e2e\\HR\\employees.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "68a20bd3-8cd6-4a48-88d8-d21c8a9300e0",
+          "title": "Perform crud operations for employees module",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "creates or add employee to the platform",
+              "fullTitle": "Perform crud operations for employees module creates or add employee to the platform",
+              "timedOut": null,
+              "duration": 50807,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Personal information section\ncy.AdminLogin();\ncy.wait(3000);\ncy.reload();\ncy.get(_hrSelectors.HRSelectors.accordionIcon).eq(0).click();\ncy.get(\".v-list-item-title\").eq(2).click();\ncy.get(\".v-list-item-title\").eq(3).click();\ncy.url().should(\"contain\", \"/employees\");\ncy.get(\"[data-v-50b16f5d]\").eq(0).click();\ncy.get('[name=\"1\"]').type(_faker.faker.person.middleName());\ncy.get('[name=\"2\"]').type(_faker.faker.person.firstName());\ncy.get('[name=\"3\"]').type(_faker.faker.person.lastName());\ncy.get('[name=\"4\"]').type(_faker.faker.person.middleName());\ncy.get('[name=\"5\"]').type(birthday.toString());\ncy.get('[placeholder=\"Select gender\"]').select(gender);\ncy.get('[placeholder=\"Select country\"]').select(country);\ncy.get('[placeholder=\"Select citizenship\"]').select(citizen);\ncy.get('[name=\"6\"]').type(_faker.faker.internet.email());\ncy.get('[placeholder=\"Select civil status\"]').select(maritalstatus);\ncy.get('[type=\"checkbox\"]').check();\ncy.get(\"span[data-v-50b16f5d]\").click();\ncy.contains(\"Personal information created successfully\", {\n  matchCase: false\n}).should(\"exist\");\n// Contact information section\ncy.get('[placeholder=\"0343 1234 23\"]').eq(0).type(_faker.faker.phone.number());\ncy.get('[placeholder=\"0343 1234 23\"]').eq(1).type(_faker.faker.phone.number());\ncy.get('[name=\"6\"]').eq(1).type(_faker.faker.internet.email());\ncy.get('#7').type(_faker.faker.location.streetAddress());\ncy.get('#8').type(_faker.faker.location.zipCode());\ncy.get('#9').type(_faker.faker.location.city());\ncy.get(\"select[data-v-4d86c427]\").select(country);\ncy.get(\"span[data-v-50b16f5d]\").eq(1).click();\n// Employment information section\ncy.get(\"[placeholder='Select employment type']\").select(typeofEmployment);\ncy.get(\"[placeholder='Select probation period']\").select(probationTime);\ncy.get(\"[placeholder='Add access level']\").select(employeeAccess);\ncy.contains('Add Position', {\n  matchCase: false\n}).click();\ncy.get(\"select[data-v-4d86c427]\").eq(1).select(userPosition);\ncy.get(\"select[data-v-4d86c427]\").eq(2).select(company);\ncy.get(\"select[data-v-4d86c427]\").eq(3).select(team);\ncy.get('#input-field').type(hoursWorked);\ncy.get('#start-date').type(startDate.toString());\ncy.get('#end-date').type(endDate.toString());\ncy.get(\"span[data-v-50b16f5d]\").eq(3).click();\ncy.contains(\"Position added successfully\", {\n  matchCase: false\n}).should('exist');\ncy.get(\"span[data-v-50b16f5d]\").eq(2).click();\n// Qualification section\n//  education\ncy.get(\"span[data-v-50b16f5d]\").eq(0).click();\ncy.get('input[id=\"input-field\"]').eq(0).invoke('removeAttr', 'disabled').type(university);\ncy.get('input[id=\"input-field\"]').eq(1).type(course);\ncy.get(\"button[data-v-50b16f5d]\").eq(4).click();\n// language\ncy.get(\"span[data-v-50b16f5d]\").eq(1).click();\ncy.get(\"select[data-v-4d86c427]\").select(language);\ncy.get(\"select[data-v-3a2a3aa8]\").eq(0).select(proficiencyLevel);\ncy.get(\"select[data-v-3a2a3aa8]\").eq(1).select(proficiencyLevel);\ncy.get(\"select[data-v-3a2a3aa8]\").eq(2).select(proficiencyLevel);\ncy.get(\"button[data-v-50b16f5d]\").eq(4).click();\ncy.contains(\"User language added successfully\", {\n  matchCase: false\n}).should(\"exist\");\n//  experience\ncy.get(\"button[data-v-50b16f5d]\").eq(2).click();\ncy.get('input[placeholder=\"ICON\"]').type(_faker.faker.company.name());\ncy.get('input[placeholder=\"Cologne\"]').type(_faker.faker.location.city());\ncy.get('input[placeholder=\"Solution Architect\"]').type(_faker.faker.person.jobTitle());\ncy.get(\"input[data-v-0b993928]\").eq(0).type(startDate.toString());\ncy.get('#end-date').type(endDate.toString());\ncy.get(\"button[data-v-50b16f5d]\").eq(4).click();\ncy.contains(\"User professional experience added successfully\", {\n  matchCase: false\n}).should(\"exist\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 30000ms: Expected to find content: 'Personal information created successfully' but never did.",
+                "estack": "AssertionError: Timed out retrying after 30000ms: Expected to find content: 'Personal information created successfully' but never did.\n    at Context.eval (webpack:///./cypress/e2e/HR/employees.spec.cy.js:56:80)",
+                "diff": null
+              },
+              "uuid": "e1531d00-3f22-4ed9-a606-9abbbaf8fa27",
+              "parentUUID": "68a20bd3-8cd6-4a48-88d8-d21c8a9300e0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e1531d00-3f22-4ed9-a606-9abbbaf8fa27"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 50807,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

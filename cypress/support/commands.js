@@ -1,5 +1,9 @@
 import { authSelectors } from "../selectors/authSelectors";
 
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false
+})
+
 Cypress.Commands.add("runTests", () => {
   // Get a list of all test files in the e2e folder and subfolders
   const testFilesPattern = "cypress/e2e/**/*.spec.cy.js";

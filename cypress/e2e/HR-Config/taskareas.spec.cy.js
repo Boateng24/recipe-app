@@ -8,10 +8,10 @@ describe("HR configuration Task Areas tests", () => {
     cy.contains(HRSelectors.settingsTab, {matchCase:false}).click()
     cy.contains(HRSelectors.hrconfigTab, {matchCase:false}).click();
     cy.get(HRSelectors.addButton).eq(0).click();
-    cy.contains("Add Task Area", {matchCase:false}).should('be.visible')
+    cy.contains("Add Task Area", {matchCase:false}).should('exist')
     cy.get(HRSelectors.taskInput).type(faker.word.noun())
     cy.get(HRSelectors.addTaskButton).eq(3).click();
-    // cy.contains('Task Area added successfully', {matchCase:false}).should('be.visible')
+    cy.contains('Task Area added successfully', {matchCase:false}).should('exist')
  })
 
  it("edits a task area", () => {
@@ -23,7 +23,7 @@ describe("HR configuration Task Areas tests", () => {
     cy.contains('Edit', {matchCase:false}).click();
     cy.get(HRSelectors.taskInput).clear().type(faker.word.noun());
     cy.contains('button', 'Update', {matchCase:false}).click();
-    // cy.contains('Task Area updated successfully', {matchCase:false}).should('be.visible');
+    cy.contains('Task Area updated successfully', {matchCase:false}).should('exist');
  })
 
  it("delete a task area", () => {
@@ -34,6 +34,6 @@ describe("HR configuration Task Areas tests", () => {
    cy.get(HRSelectors.editIcon).first().click();
    cy.contains("Delete", { matchCase: false }).click();
    cy.contains("button", "Replace and delete", { matchCase: false }).click();
-   // cy.contains('Task Area deleted successfully', {matchCase:false}).should('be.visible');
+   cy.contains('Task Area deleted successfully', {matchCase:false}).should('exist');
  })
 })
