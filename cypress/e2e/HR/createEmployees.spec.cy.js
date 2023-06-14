@@ -10,7 +10,7 @@ import {universities, courses} from '../../fixtures/education';
 import { languages, proficiencyLevels } from "../../fixtures/language";
 
 
-describe("Perform crud operations for employees module", () => {
+describe("Add employee to the to the system", () => {
     const getCitizenValues = Object.values(countryCitizens)
     let gender = genderData[Math.floor(Math.random() * genderData.length)]
     let country = countries[Math.floor(Math.random() * countries.length)].name
