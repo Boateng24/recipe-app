@@ -1,4 +1,4 @@
-export const employmentType = ["Internal Staff", "External Staff"];
+export const employmentType = ["Internal Type", "External Type"];
 
 export const probationPeriod = ["3 Months", "6 Months"];
 

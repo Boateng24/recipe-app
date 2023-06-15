@@ -20,6 +20,8 @@ export default defineConfig({
   viewportWidth: 1000,
   viewportHeight: 600,
   pageLoadTimeout: 100000,
+  experimentalMemoryManagement: true,
+  numTestsKeptInMemory:20,
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
