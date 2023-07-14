@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-07-14T11:02:54.444Z",
+    "end": "2023-07-14T11:04:08.864Z",
+    "duration": 74420,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "24b60db4-834f-4467-a937-a06fd1045fb8",
+      "title": "",
+      "fullFile": "cypress/e2e/Access/addAccess.spec.cy.js",
+      "file": "cypress/e2e/Access/addAccess.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bd5e4710-67be-4e37-9c13-c453ec53fca0",
+          "title": "Create a new access role",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "add a new access role to the system by admin",
+              "fullTitle": "Create a new access role add a new access role to the system by admin",
+              "timedOut": null,
+              "duration": 73827,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.AdminLogin();\n// cy.get(HRSelectors.accordionIcon).eq(0).click()\ncy.contains(_hrSelectors.HRSelectors.settingsTab, {\n  matchCase: false\n}).click();\ncy.get(\"div.v-list-item-title\").eq(11).click();\ncy.get(\"button[data-v-50b16f5d]\").click();\ncy.get('input[placeholder=\"Role Title\"]').type(_faker.faker.person.jobArea());\n// Employee module roles\ncy.get(\".access_level>:nth-child(1)>:nth-child(3)\").eq(0).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(1).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(2).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(3).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(4).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(5).click();\n// // Leave module roles\ncy.get(\".access_level>:nth-child(1)>:nth-child(3)\").eq(6).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(7).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(8).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(9).click();\n// Experts & Partners module\n// Experts\ncy.get(\".access_level>:nth-child(1)>:nth-child(3)\").eq(10).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(3)\").eq(11).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(12).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(13).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(14).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(15).click();\n// Partners\ncy.get(\".access_level>:nth-child(1)>:nth-child(3)\").eq(16).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(17).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(18).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(19).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(20).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(21).click();\n// Projects\ncy.get(\".access_level>:nth-child(1)>:nth-child(3)\").eq(22).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(23).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(24).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(25).click();\ncy.get(\"button[data-v-50b16f5d]\").click();",
+              "err": {},
+              "uuid": "676fee57-f83e-41b2-b5aa-2dfe24eb43b7",
+              "parentUUID": "bd5e4710-67be-4e37-9c13-c453ec53fca0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "676fee57-f83e-41b2-b5aa-2dfe24eb43b7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 73827,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

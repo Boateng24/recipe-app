@@ -4,10 +4,10 @@ export const languages =[
     "Krobo",
     "Fante",
     "Nzema",
-    "Dangme",
-    "Dangoba",
+    "Dagomba",
     "Ga",
-    "Twi"
+    "Twi",
+    "French"
 ]
 
 export const proficiencyLevels = [

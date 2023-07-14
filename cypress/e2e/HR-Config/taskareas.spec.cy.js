@@ -4,7 +4,7 @@ import {faker} from '@faker-js/faker';
 describe("HR configuration Task Areas tests", () => {
  it("adds a task area to the HR Configuration page by the admin", () => {
     cy.AdminLogin()
-    cy.get(HRSelectors.accordionIcon).eq(0).click();
+   //  cy.get(HRSelectors.accordionIcon).eq(0).click();
     cy.contains(HRSelectors.settingsTab, {matchCase:false}).click()
     cy.contains(HRSelectors.hrconfigTab, {matchCase:false}).click();
     cy.get(HRSelectors.addButton).eq(0).click();
@@ -16,7 +16,7 @@ describe("HR configuration Task Areas tests", () => {
 
  it("edits a task area", () => {
     cy.AdminLogin()
-    cy.get(HRSelectors.accordionIcon).eq(0).click();
+   //  cy.get(HRSelectors.accordionIcon).eq(0).click();
     cy.contains(HRSelectors.settingsTab, {matchCase:false}).click()
     cy.contains(HRSelectors.hrconfigTab, {matchCase:false}).click();
     cy.get(HRSelectors.editIcon).first().click();
@@ -28,7 +28,7 @@ describe("HR configuration Task Areas tests", () => {
 
  it("delete a task area", () => {
    cy.AdminLogin();
-   cy.get(HRSelectors.accordionIcon).eq(0).click();
+   // cy.get(HRSelectors.accordionIcon).eq(0).click();
    cy.contains(HRSelectors.settingsTab, { matchCase: false }).click();
    cy.contains(HRSelectors.hrconfigTab, { matchCase: false }).click();
    cy.get(HRSelectors.editIcon).first().click();

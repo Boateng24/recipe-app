@@ -36,13 +36,15 @@ describe("Add employee to the to the system", () => {
     cy.AdminLogin();
     cy.wait(3000)
     cy.reload()
-    cy.get(HRSelectors.accordionIcon).eq(0).click();
+    // cy.get(HRSelectors.accordionIcon).eq(0).click();
     cy.get(".v-list-item-title").eq(2).click();
     cy.get(".v-list-item-title").eq(3).click();
     cy.url().should("contain", "/employees");
     cy.get("[data-v-50b16f5d]").eq(0).click();
     cy.get('[name="1"]').type(faker.person.middleName())
-    cy.get('[name="2"]').type(faker.person.firstName())
+    cy.get('[placeholder="Enter first name"]', { matchCase: false }).type(
+      faker.person.firstName()
+    );
     cy.get('[name="3"]').type(faker.person.lastName())
     cy.get('[name="4"]').type(faker.person.middleName())
     cy.get('[name="5"]').type(birthday.toString())
@@ -56,8 +58,8 @@ describe("Add employee to the to the system", () => {
     cy.contains("Personal information created successfully", {matchCase:false}).should("exist")
 
     // Contact information section
-    cy.get('[placeholder="0343 1234 23"]').eq(0).type(faker.phone.number());
-    cy.get('[placeholder="0343 1234 23"]').eq(1).type(faker.phone.number());
+    cy.get('[placeholder="Enter phone number"]').type(faker.phone.number());
+    cy.get('[placeholder="Enter mobile number"]').type(faker.phone.number());
     cy.get('[name="6"]').eq(1).type(faker.internet.email());
     cy.get('#7').type(faker.location.streetAddress())
     cy.get('#8').type(faker.location.zipCode());
@@ -76,13 +78,14 @@ describe("Add employee to the to the system", () => {
     cy.get('#input-field').type(hoursWorked);
     cy.get('#start-date').type(startDate.toString());
     cy.get('#end-date').type(endDate.toString());
-    cy.get("span[data-v-50b16f5d]").eq(3).click();
-    cy.contains("Position added successfully", {matchCase:false}).should('exist')
     cy.get("span[data-v-50b16f5d]").eq(2).click();
+    cy.contains("Position added successfully", {matchCase:false}).should('exist')
+    cy.get("span[data-v-50b16f5d]").eq(1).click();
+    cy.wait(5000)
 
     // Qualification section
       //  education
-    cy.get("span[data-v-50b16f5d]").eq(0).click();
+    cy.get("button[data-v-50b16f5d]").eq(0).click();
     cy.get('input[id="input-field"]').eq(0)
     .invoke('removeAttr', 'disabled')
     .type(university);
@@ -90,7 +93,7 @@ describe("Add employee to the to the system", () => {
     cy.get("button[data-v-50b16f5d]").eq(4).click();
 
       // language
-    cy.get("span[data-v-50b16f5d]").eq(1).click();
+    cy.get("button[data-v-50b16f5d]").eq(1).click();
     cy.get("select[data-v-4d86c427]").select(language);
     cy.get("select[data-v-3a2a3aa8]").eq(0).select(proficiencyLevel);
     cy.get("select[data-v-3a2a3aa8]").eq(1).select(proficiencyLevel);
@@ -107,9 +110,11 @@ describe("Add employee to the to the system", () => {
     cy.get('input[placeholder="Solution Architect"]').type(faker.person.jobTitle());
     cy.get("input[data-v-0b993928]").eq(0).type(startDate.toString());
     cy.get('#end-date').type(endDate.toString())
-    cy.get("button[data-v-50b16f5d]").eq(4).click();
+    cy.get("button[data-v-50b16f5d]").eq(4).click()
      cy.contains("User professional experience added successfully", {
        matchCase: false,
      }).should("exist");
+     cy.get("button[data-v-50b16f5d]").eq(3).click();
+     cy.url().should("eq", "https://icon.amalitech-dev.net/employees");
   });
 });

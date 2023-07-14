@@ -42,7 +42,7 @@ describe("Perform update actions on employees", () => {
     cy.AdminLogin();
     cy.wait(3000);
     cy.reload();
-    cy.get(HRSelectors.accordionIcon).eq(0).click();
+    // cy.get(HRSelectors.accordionIcon).eq(0).click();
     cy.get(".v-list-item-title").eq(2).click();
     cy.get(".v-list-item-title").eq(3).click();
     cy.url().should("contain", "/employees");
@@ -72,31 +72,32 @@ describe("Perform update actions on employees", () => {
     cy.get("[placeholder='Select employment type']").select(typeofEmployment);
     cy.get("[placeholder='Select probation period']").select(probationTime);
     cy.get("[placeholder='Add access level']").select(employeeAccess);
-    cy.get("span[data-v-50b16f5d]").eq(0).click();
-    cy.get("button[data-v-50b16f5d]").eq(2).click();
+    // cy.get("span[data-v-50b16f5d]").eq(0).click();
+    // cy.get("button[data-v-50b16f5d]").eq(2).click();
 
-    // Qualification section
-    //  education
+    // // Qualification section
+    // //  education
+    cy.get("button.tab-button").eq(3).click();
     cy.get("span[data-v-50b16f5d]").eq(0).click();
     cy.get('input[id="input-field"]')
       .eq(0)
       .invoke("removeAttr", "disabled")
       .type(university);
     cy.get('input[id="input-field"]').eq(1).type(course);
-    cy.get("button[data-v-50b16f5d]").eq(4).click();
+    cy.get("button[data-v-50b16f5d]").eq(3).click();
 
-    // language
-    cy.get("span[data-v-50b16f5d]").eq(1).click();
+    // // language
+    cy.get("button[data-v-50b16f5d]").eq(1).click();
     cy.get("select[data-v-4d86c427]").select(language);
     cy.get("select[data-v-3a2a3aa8]").eq(0).select(proficiencyLevel);
     cy.get("select[data-v-3a2a3aa8]").eq(1).select(proficiencyLevel);
     cy.get("select[data-v-3a2a3aa8]").eq(2).select(proficiencyLevel);
-    cy.get("button[data-v-50b16f5d]").eq(4).click();
+    cy.get("button[data-v-50b16f5d]").eq(3).click();
     cy.contains("User language added successfully", {
       matchCase: false,
     }).should("exist");
 
-    //  experience
+    // //  experience
     cy.get("button[data-v-50b16f5d]").eq(2).click();
     cy.get('input[placeholder="ICON"]').type(faker.company.name());
     cy.get('input[placeholder="Cologne"]').type(faker.location.city());
@@ -105,7 +106,7 @@ describe("Perform update actions on employees", () => {
     );
     cy.get("input[data-v-0b993928]").eq(0).type(startDate.toString());
     cy.get("#end-date").type(endDate.toString());
-    cy.get("button[data-v-50b16f5d]").eq(4).click();
+    cy.get("button[data-v-50b16f5d]").eq(3).click();
     cy.contains("User professional experience added successfully", {
       matchCase: false,
     }).should("exist");

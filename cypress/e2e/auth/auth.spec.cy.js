@@ -13,22 +13,14 @@ describe('login page tests', () => {
     cy.get(authSelectors.emailId).type(authData.email)
     cy.get(authSelectors.passwordId).type(authData.password)
     cy.get(authSelectors.signInbutton).click();
-    cy.get(authSelectors.welcomeUser).should('exist')
-    cy.contains(authSelectors.welcomeMsg1,{matchCase:false}).should("exist");
-    cy.contains(authSelectors.welcomeMsg2, {
-      matchCase: false,
-    }).should("exist");
+    cy.url().should('eq', authSelectors.homeUrl)
   })
   it('it should successfully sign in a registered user with valid username and password', () => {
     cy.visit('/')
     cy.get(authSelectors.emailId).type(authData.username)
     cy.get(authSelectors.passwordId).type(authData.password)
     cy.get(authSelectors.signInbutton).click();
-    cy.get(authSelectors.welcomeUser).should('exist')
-    cy.contains(authSelectors.welcomeMsg1,{matchCase:false}).should("exist");
-    cy.contains(authSelectors.welcomeMsg2, {
-      matchCase: false,
-    }).should("exist");
+    cy.url().should('eq', authSelectors.homeUrl)
   })
 
   it('should prompt for required field for the username or email input field', () => {

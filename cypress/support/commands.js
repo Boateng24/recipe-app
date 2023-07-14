@@ -16,7 +16,7 @@ Cypress.Commands.add("runTests", () => {
   // Run tests using Cypress' run command
   cy.task("mocha", {
     files: testFiles,
-    reporterOptions: { reportDir: "cypress/reports/mocha" },
+    reporterOptions: { reportDir: "cypress/reports/mochawesome" },
   });
 });
 

@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-07-14T11:15:44.651Z",
+    "end": "2023-07-14T11:16:45.589Z",
+    "duration": 60938,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "242dad4e-1a31-4cfb-9a96-5ef81f90a7e6",
+      "title": "",
+      "fullFile": "cypress/e2e/HR/updateEmployees.spec.cy.js",
+      "file": "cypress/e2e/HR/updateEmployees.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1620114e-cf71-4e2e-b681-da03d6f8214f",
+          "title": "Perform update actions on employees",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "edits employee information",
+              "fullTitle": "Perform update actions on employees edits employee information",
+              "timedOut": null,
+              "duration": 60313,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// login and individual employee page\ncy.AdminLogin();\ncy.wait(3000);\ncy.reload();\n// cy.get(HRSelectors.accordionIcon).eq(0).click();\ncy.get(\".v-list-item-title\").eq(2).click();\ncy.get(\".v-list-item-title\").eq(3).click();\ncy.url().should(\"contain\", \"/employees\");\ncy.get(\"tbody[data-v-5f9f8757]>:nth-child(3)\").click();\n//  Personal Info section\ncy.contains(\"Edit Profile\", {\n  matchCase: false\n}).click({\n  force: true\n});\ncy.get('[name=\"5\"]').type(birthday.toString());\ncy.get('[placeholder=\"Select gender\"]').select(gender);\ncy.get('[placeholder=\"Select country\"]').select(country);\ncy.get('[placeholder=\"Select citizenship\"]').select(citizen);\ncy.get('[placeholder=\"Select civil status\"]').select(maritalstatus);\ncy.get(\"button[data-v-50b16f5d]\").click();\ncy.contains(\"Employee information updated successfully\", {\n  matchCase: false\n}).should(\"exist\");\n// contact section\ncy.get(\"button.tab-button\").eq(1).click();\ncy.get(\"input#5\").clear().type(_faker.faker.phone.number());\ncy.get(\"input#6\").clear().type(_faker.faker.internet.email());\ncy.get(\"input#8\").clear().type(_faker.faker.location.zipCode());\ncy.get(\"button[data-v-50b16f5d]\").click();\n// employment section\ncy.get(\"button.tab-button\").eq(2).click();\ncy.get(\"[placeholder='Select employment type']\").select(typeofEmployment);\ncy.get(\"[placeholder='Select probation period']\").select(probationTime);\ncy.get(\"[placeholder='Add access level']\").select(employeeAccess);\n// cy.get(\"span[data-v-50b16f5d]\").eq(0).click();\n// cy.get(\"button[data-v-50b16f5d]\").eq(2).click();\n// // Qualification section\n// //  education\ncy.get(\"button.tab-button\").eq(3).click();\ncy.get(\"span[data-v-50b16f5d]\").eq(0).click();\ncy.get('input[id=\"input-field\"]').eq(0).invoke(\"removeAttr\", \"disabled\").type(university);\ncy.get('input[id=\"input-field\"]').eq(1).type(course);\ncy.get(\"button[data-v-50b16f5d]\").eq(3).click();\n// // language\ncy.get(\"button[data-v-50b16f5d]\").eq(1).click();\ncy.get(\"select[data-v-4d86c427]\").select(language);\ncy.get(\"select[data-v-3a2a3aa8]\").eq(0).select(proficiencyLevel);\ncy.get(\"select[data-v-3a2a3aa8]\").eq(1).select(proficiencyLevel);\ncy.get(\"select[data-v-3a2a3aa8]\").eq(2).select(proficiencyLevel);\ncy.get(\"button[data-v-50b16f5d]\").eq(3).click();\ncy.contains(\"User language added successfully\", {\n  matchCase: false\n}).should(\"exist\");\n// //  experience\ncy.get(\"button[data-v-50b16f5d]\").eq(2).click();\ncy.get('input[placeholder=\"ICON\"]').type(_faker.faker.company.name());\ncy.get('input[placeholder=\"Cologne\"]').type(_faker.faker.location.city());\ncy.get('input[placeholder=\"Solution Architect\"]').type(_faker.faker.person.jobTitle());\ncy.get(\"input[data-v-0b993928]\").eq(0).type(startDate.toString());\ncy.get(\"#end-date\").type(endDate.toString());\ncy.get(\"button[data-v-50b16f5d]\").eq(3).click();\ncy.contains(\"User professional experience added successfully\", {\n  matchCase: false\n}).should(\"exist\");",
+              "err": {
+                "message": "CypressError: `cy.type()` failed because it targeted a disabled element.\n\nThe element typed into was:\n\n  > <input data-v-41c25097=\"\" type=\"text\" name=\"input-field\" id=\"input-field\" class=\"\" placeholder=\"University of Energy and Natural Resources\" validation=\"\">\n\nEnsure the element does not have an attribute named `disabled` before typing into it.\n\nhttps://on.cypress.io/type",
+                "estack": "CypressError: `cy.type()` failed because it targeted a disabled element.\n\nThe element typed into was:\n\n  > <input data-v-41c25097=\"\" type=\"text\" name=\"input-field\" id=\"input-field\" class=\"\" placeholder=\"University of Energy and Natural Resources\" validation=\"\">\n\nEnsure the element does not have an attribute named `disabled` before typing into it.\n\nhttps://on.cypress.io/type\n    at <unknown> (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:144238:86)\n    at tryCatcher (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:18744:23)\n    at Promise._settlePromiseFromHandler (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16679:31)\n    at Promise._settlePromise (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16736:18)\n    at Promise._settlePromise0 (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16781:10)\n    at Promise._settlePromises (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16861:18)\n    at _drainQueueStep (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:13451:12)\n    at _drainQueue (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:13444:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:13460:5)\n    at Async.drainQueues (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:13330:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/HR/updateEmployees.spec.cy.js:85:7)",
+                "diff": null
+              },
+              "uuid": "dcb936f8-a942-4e0b-ac85-b150a7c9b8e0",
+              "parentUUID": "1620114e-cf71-4e2e-b681-da03d6f8214f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "dcb936f8-a942-4e0b-ac85-b150a7c9b8e0"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 60313,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

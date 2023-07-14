@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-07-13T15:47:57.066Z",
+    "end": "2023-07-13T15:48:40.462Z",
+    "duration": 43396,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "004fd85b-4645-4127-84f2-769bb96a4998",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Access\\addAccess.spec.cy.js",
+      "file": "cypress\\e2e\\Access\\addAccess.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "130936db-1572-454f-8985-766ed921347d",
+          "title": "Create a new access role",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "add a new access role to the system by admin",
+              "fullTitle": "Create a new access role add a new access role to the system by admin",
+              "timedOut": null,
+              "duration": 43254,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.AdminLogin();\ncy.get(_hrSelectors.HRSelectors.accordionIcon).eq(0).click();\ncy.contains(_hrSelectors.HRSelectors.settingsTab, {\n  matchCase: false\n}).click();\ncy.get(\"div.v-list-item-title\").eq(3).click();\ncy.get(\"button[data-v-50b16f5d]\").click();\ncy.get('input[placeholder=\"Role Title\"]').type(_faker.faker.person.jobArea());\n// Employee module roles\ncy.get(\".access_level>:nth-child(1)>:nth-child(3)\").eq(0).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(1).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(2).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(3).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(4).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(5).click();\n// // Leave module roles\ncy.get(\".access_level>:nth-child(1)>:nth-child(3)\").eq(6).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(7).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(8).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(9).click();\n// Experts & Partners module\n// Experts\ncy.get(\".access_level>:nth-child(1)>:nth-child(3)\").eq(10).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(3)\").eq(11).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(12).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(13).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(14).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(15).click();\n// Partners\ncy.get(\".access_level>:nth-child(1)>:nth-child(3)\").eq(16).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(17).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(18).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(19).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(20).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(21).click();\n// Projects\ncy.get(\".access_level>:nth-child(1)>:nth-child(3)\").eq(22).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(23).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(24).click();\ncy.get(\".access_level>:nth-child(1)>:nth-child(2)\").eq(25).click();\ncy.get(\"button[data-v-50b16f5d]\").click();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 30050ms: `cy.click()` failed because this element is not visible:\n\n`<div class=\"v-list-item-title\">Settings</div>`\n\nThis element `<div.v-list-item-title>` is not visible because it has an effective width and height of: `0 x 32` pixels.\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 30050ms: `cy.click()` failed because this element is not visible:\n\n`<div class=\"v-list-item-title\">Settings</div>`\n\nThis element `<div.v-list-item-title>` is not visible because it has an effective width and height of: `0 x 32` pixels.\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:161390:66)\n    at Object.isStrictlyVisible (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:161404:10)\n    at runAllChecks (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:139986:26)\n    at retryActionability (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:140054:16)\n    at tryCatcher (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:18744:23)\n    at Promise.attempt.Promise.try (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16018:29)\n    at whenStable (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:156168:65)\n    at <unknown> (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:155609:14)\n    at tryCatcher (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:18744:23)\n    at Promise._settlePromiseFromHandler (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16679:31)\n    at Promise._settlePromise (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16736:18)\n    at Promise._settlePromise0 (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16781:10)\n    at Promise._settlePromises (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16861:18)\n    at Promise._fulfill (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16805:18)\n    at <unknown> (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:18419:46)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/Access/addAccess.spec.cy.js:8:63)",
+                "diff": null
+              },
+              "uuid": "49486926-5a32-4584-ae9c-9b3e2a1f2437",
+              "parentUUID": "130936db-1572-454f-8985-766ed921347d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "49486926-5a32-4584-ae9c-9b3e2a1f2437"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 43254,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\mochawesome\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

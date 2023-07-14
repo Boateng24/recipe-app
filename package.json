@@ -1,5 +1,5 @@
 {
-  "name": "IconAutomatedTest",
+  "name": "iconautomatedtest",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Amali-Tech/IconAutomatedTest.git",
@@ -7,18 +7,20 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "cypress run runTests && yarn run combine-reports && yarn run generate-report && yarn report",
+    "test": "rm -rf cypress/reports && cypress run runTests && yarn generate-report && yarn merge-reports yarn open:report",
     "test:open": "cypress open",
-    "combine-reports": "mkdirp ./mochareports && mochawesome-merge './cypress/reports/mocha/*.json' > ./mochareports/report.json",
-    "generate-report": "marge ./mochareports/report.json --reportDir mochawesomeReport --assetDir mochawesomeReport/assets",
-    "open:report": "yarn run generate-report",
+    "test:run": "cypress run",
+    "generate-report": "yarn mochawesome-merge cypress/reports/mochawesome/.jsons/*.json > cypress/reports/mochawesome/mochawesome.json",
+    "merge-reports": "yarn marge cypress/reports/mochawesome/mochawesome.json -f report -o cypress/reports/html",
+    "open:report": "start cypress/reports/html/report.html",
     "report": "yarn run open:report",
-    "open:report:mac": "open ./mochawesome-report/mochawesome.html",
-    "cypress-cloud": "npx cypress run --record --key f73fa162-2dbc-43d1-b305-7c25b66058bd"
+    "open:report:mac": "open cypress/reports/html/report.html",
+    "cypress-cloud": "npx cypress run --record --key f73fa162-2dbc-43d1-b305-7c25b66058bd" 
   },
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
     "cypress": "^12.13.0",
+    "cypress-mochawesome-reporter": "^3.5.1",
     "mkdirp": "^3.0.1",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.3.0"

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  cypress:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    environment:
+      - CYPRESS_baseUrl=https://icon.amalitech-dev.net/
+    depends_on:
+      - Iconweb
+
+  Iconweb:
+      image: public.ecr.aws/h1b1n6k7/icon-frontend:latest

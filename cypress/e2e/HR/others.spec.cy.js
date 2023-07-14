@@ -17,7 +17,7 @@ describe("Other functionalities on employees module", () => {
     cy.AdminLogin();
     cy.wait(3000);
     cy.reload();
-    cy.get(HRSelectors.accordionIcon).eq(0).click();
+    // cy.get(HRSelectors.accordionIcon).eq(0).click();
     cy.get(".v-list-item-title").eq(2).click();
     cy.get(".v-list-item-title").eq(3).click();
     cy.url().should("contain", "/employees");
@@ -30,7 +30,7 @@ describe("Other functionalities on employees module", () => {
     cy.AdminLogin();
     cy.wait(3000);
     cy.reload();
-    cy.get(HRSelectors.accordionIcon).eq(0).click();
+    // cy.get(HRSelectors.accordionIcon).eq(0).click();
     cy.get(".v-list-item-title").eq(2).click();
     cy.get(".v-list-item-title").eq(3).click();
     cy.url().should("contain", "/employees");
@@ -45,7 +45,7 @@ describe("Other functionalities on employees module", () => {
     cy.AdminLogin();
     cy.wait(3000);
     cy.reload();
-    cy.get(HRSelectors.accordionIcon).eq(0).click();
+    // cy.get(HRSelectors.accordionIcon).eq(0).click();
     cy.get(".v-list-item-title").eq(2).click();
     cy.get(".v-list-item-title").eq(3).click();
     cy.url().should("contain", "/employees");
@@ -61,7 +61,7 @@ describe("Other functionalities on employees module", () => {
     cy.AdminLogin();
     cy.wait(3000);
     cy.reload();
-    cy.get(HRSelectors.accordionIcon).eq(0).click();
+    // cy.get(HRSelectors.accordionIcon).eq(0).click();
     cy.get(".v-list-item-title").eq(2).click();
     cy.get(".v-list-item-title").eq(3).click();
     cy.url().should("contain", "/employees");
@@ -83,7 +83,7 @@ describe("Other functionalities on employees module", () => {
     cy.AdminLogin();
     cy.wait(3000);
     cy.reload();
-    cy.get(HRSelectors.accordionIcon).eq(0).click();
+    // cy.get(HRSelectors.accordionIcon).eq(0).click();
     cy.get(".v-list-item-title").eq(2).click();
     cy.get(".v-list-item-title").eq(3).click();
     cy.url().should("contain", "/employees");
@@ -94,7 +94,7 @@ describe("Other functionalities on employees module", () => {
     cy.AdminLogin();
     cy.wait(3000);
     cy.reload();
-    cy.get(HRSelectors.accordionIcon).eq(0).click();
+    // cy.get(HRSelectors.accordionIcon).eq(0).click();
     cy.get(".v-list-item-title").eq(2).click();
     cy.get(".v-list-item-title").eq(3).click();
     cy.url().should("contain", "/employees");

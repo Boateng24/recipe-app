@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-07-13T15:57:29.048Z",
+    "end": "2023-07-13T15:58:22.964Z",
+    "duration": 53916,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2cb42fea-90af-45ae-859e-6b97cc01aec7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\HR\\updateEmployees.spec.cy.js",
+      "file": "cypress\\e2e\\HR\\updateEmployees.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f8c25c32-874a-4028-9967-13948c7ca547",
+          "title": "Perform update actions on employees",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "edits employee information",
+              "fullTitle": "Perform update actions on employees edits employee information",
+              "timedOut": null,
+              "duration": 53753,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// login and individual employee page\ncy.AdminLogin();\ncy.wait(3000);\ncy.reload();\ncy.get(_hrSelectors.HRSelectors.accordionIcon).eq(0).click();\ncy.get(\".v-list-item-title\").eq(2).click();\ncy.get(\".v-list-item-title\").eq(3).click();\ncy.url().should(\"contain\", \"/employees\");\ncy.get(\"tbody[data-v-5f9f8757]>:nth-child(3)\").click();\n//  Personal Info section\ncy.contains(\"Edit Profile\", {\n  matchCase: false\n}).click({\n  force: true\n});\ncy.get('[name=\"5\"]').type(birthday.toString());\ncy.get('[placeholder=\"Select gender\"]').select(gender);\ncy.get('[placeholder=\"Select country\"]').select(country);\ncy.get('[placeholder=\"Select citizenship\"]').select(citizen);\ncy.get('[placeholder=\"Select civil status\"]').select(maritalstatus);\ncy.get(\"button[data-v-50b16f5d]\").click();\ncy.contains(\"Employee information updated successfully\", {\n  matchCase: false\n}).should(\"exist\");\n// contact section\ncy.get(\"button.tab-button\").eq(1).click();\ncy.get(\"input#5\").clear().type(_faker.faker.phone.number());\ncy.get(\"input#6\").clear().type(_faker.faker.internet.email());\ncy.get(\"input#8\").clear().type(_faker.faker.location.zipCode());\ncy.get(\"button[data-v-50b16f5d]\").click();\n// employment section\ncy.get(\"button.tab-button\").eq(2).click();\ncy.get(\"[placeholder='Select employment type']\").select(typeofEmployment);\ncy.get(\"[placeholder='Select probation period']\").select(probationTime);\ncy.get(\"[placeholder='Add access level']\").select(employeeAccess);\ncy.get(\"span[data-v-50b16f5d]\").eq(0).click();\ncy.get(\"button[data-v-50b16f5d]\").eq(2).click();\n// Qualification section\n//  education\ncy.get(\"span[data-v-50b16f5d]\").eq(0).click();\ncy.get('input[id=\"input-field\"]').eq(0).invoke(\"removeAttr\", \"disabled\").type(university);\ncy.get('input[id=\"input-field\"]').eq(1).type(course);\ncy.get(\"button[data-v-50b16f5d]\").eq(4).click();\n// language\ncy.get(\"span[data-v-50b16f5d]\").eq(1).click();\ncy.get(\"select[data-v-4d86c427]\").select(language);\ncy.get(\"select[data-v-3a2a3aa8]\").eq(0).select(proficiencyLevel);\ncy.get(\"select[data-v-3a2a3aa8]\").eq(1).select(proficiencyLevel);\ncy.get(\"select[data-v-3a2a3aa8]\").eq(2).select(proficiencyLevel);\ncy.get(\"button[data-v-50b16f5d]\").eq(4).click();\ncy.contains(\"User language added successfully\", {\n  matchCase: false\n}).should(\"exist\");\n//  experience\ncy.get(\"button[data-v-50b16f5d]\").eq(2).click();\ncy.get('input[placeholder=\"ICON\"]').type(_faker.faker.company.name());\ncy.get('input[placeholder=\"Cologne\"]').type(_faker.faker.location.city());\ncy.get('input[placeholder=\"Solution Architect\"]').type(_faker.faker.person.jobTitle());\ncy.get(\"input[data-v-0b993928]\").eq(0).type(startDate.toString());\ncy.get(\"#end-date\").type(endDate.toString());\ncy.get(\"button[data-v-50b16f5d]\").eq(4).click();\ncy.contains(\"User professional experience added successfully\", {\n  matchCase: false\n}).should(\"exist\");",
+              "err": {
+                "message": "CypressError: Timed out retrying after 30050ms: `cy.click()` failed because this element is not visible:\n\n`<div class=\"v-list-item-title\">Human R...</div>`\n\nThis element `<div.v-list-item-title>` is not visible because it has an effective width and height of: `0 x 32` pixels.\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 30050ms: `cy.click()` failed because this element is not visible:\n\n`<div class=\"v-list-item-title\">Human R...</div>`\n\nThis element `<div.v-list-item-title>` is not visible because it has an effective width and height of: `0 x 32` pixels.\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:161390:66)\n    at Object.isStrictlyVisible (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:161404:10)\n    at runAllChecks (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:139986:26)\n    at retryActionability (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:140054:16)\n    at tryCatcher (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:18744:23)\n    at Promise.attempt.Promise.try (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16018:29)\n    at whenStable (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:156168:65)\n    at <unknown> (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:155609:14)\n    at tryCatcher (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:18744:23)\n    at Promise._settlePromiseFromHandler (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16679:31)\n    at Promise._settlePromise (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16736:18)\n    at Promise._settlePromise0 (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16781:10)\n    at Promise._settlePromises (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16861:18)\n    at Promise._fulfill (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:16805:18)\n    at <unknown> (https://icon.amalitech-dev.net/__cypress/runner/cypress_runner.js:18419:46)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/HR/updateEmployees.spec.cy.js:46:39)",
+                "diff": null
+              },
+              "uuid": "1fadb28b-379c-4f38-b8b5-7458a2b97446",
+              "parentUUID": "f8c25c32-874a-4028-9967-13948c7ca547",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "1fadb28b-379c-4f38-b8b5-7458a2b97446"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 53753,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\mochawesome\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
