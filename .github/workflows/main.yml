@@ -1,11 +1,7 @@
-name: Icon Cypress Tests
+name: Iconautomationtests
 
 on: 
   push:
-    branches:
-      - main
-
-  pull_request:
     branches:
       - main
 
