@@ -14,14 +14,16 @@ class Command(BaseCommand):
 
     def handle(self, *args: Any, **options: Any):
         """Entrypoint for command."""
+        MAX_RETRIES = 10
         self.stdout.write('Waiting for database...')
-        db_up = False
-        while db_up is False:
+        for _ in range(MAX_RETRIES):
             try:
                 self.check(databases=['default'])
-                db_up = True
+                break
             except (Psycopg2OpError, OperationalError):
-                self.stdout.write('Database unavailabe, waiting 1 second...')
+                self.stdout.write('Database unavailable, waiting 1 second...')
                 time.sleep(1)
-
+        else:
+            self.stdout.write(self.style.ERROR('Failed to connect to database after multiple attempts!'))
+            return
         self.stdout.write(self.style.SUCCESS('Database available!'))
