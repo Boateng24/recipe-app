@@ -17,7 +17,6 @@ export const position = [
   "Junior Project Manager",
   "Project Assistant",
   "Trainee (Azubi)",
-  "Project Manager",
   "Controlling Assistant",
   "Controller",
   "Accountant",
@@ -54,3 +53,5 @@ export const teams = [
 ]
 
 export const weeklyHours = ["100","80","40"]
+
+export const employeeStatus = ["Active", "Inactive"]

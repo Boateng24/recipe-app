@@ -7,10 +7,10 @@ describe("HR configuration Task Areas tests", () => {
    //  cy.get(HRSelectors.accordionIcon).eq(0).click();
     cy.contains(HRSelectors.settingsTab, {matchCase:false}).click()
     cy.contains(HRSelectors.hrconfigTab, {matchCase:false}).click();
-    cy.get(HRSelectors.addButton).eq(0).click();
+    cy.contains("span", "Add").parent('button').click();
     cy.contains("Add Task Area", {matchCase:false}).should('exist')
     cy.get(HRSelectors.taskInput).type(faker.word.noun())
-    cy.get(HRSelectors.addTaskButton).eq(3).click();
+    cy.get("[type='button']").last().click();
    //  cy.contains('Task Area added successfully', {matchCase:false}).should('exist')
  })
 

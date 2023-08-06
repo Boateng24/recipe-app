@@ -1,4 +1,4 @@
-import { authSelectors } from "../selectors/authSelectors";
+
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false
@@ -20,11 +20,3 @@ Cypress.Commands.add("runTests", () => {
   });
 });
 
-// Login as Admin
-Cypress.Commands.add("AdminLogin", () => {
-  cy.visit("/");
-  cy.contains(authSelectors.loginHeading);
-  cy.get(authSelectors.emailId).type(Cypress.env("adminEmail"));
-  cy.get(authSelectors.passwordId).type(Cypress.env("adminPassword"));
-  cy.get(authSelectors.signInbutton).click();
-});

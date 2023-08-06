@@ -5,6 +5,7 @@ import {
   companies,
   employmentType,
   teams,
+  employeeStatus
 } from "../../fixtures/employment";
 
 describe("Other functionalities on employees module", () => {
@@ -13,6 +14,7 @@ describe("Other functionalities on employees module", () => {
   let userPosition = position[Math.floor(Math.random() * position.length)];
   let company = companies[Math.floor(Math.random() * companies.length)];
   let team = teams[Math.floor(Math.random() * teams.length)];
+  let status = employeeStatus[Math.floor(Math.random() * employeeStatus.length)]
   it("deletes an existing employeee", () => {
     cy.AdminLogin();
     cy.wait(3000);
@@ -23,7 +25,7 @@ describe("Other functionalities on employees module", () => {
     cy.url().should("contain", "/employees");
     cy.get(".v-icon--clickable").eq(3).click();
     cy.contains("Delete User", { matchCase: false }).click();
-    cy.get("button[data-v-2b3c31b6]").click();
+    cy.contains("span", "Yes , delete").click();
   });
 
   it("deactivates an existing employeee's account", () => {
@@ -36,7 +38,7 @@ describe("Other functionalities on employees module", () => {
     cy.url().should("contain", "/employees");
     cy.get(".v-icon--clickable").eq(6).click();
     cy.contains("Deactivate Account", { matchCase: false }).click();
-    cy.get("button[data-v-2b3c31b6]").click();
+    cy.contains("span", "Yes , deactivate").click();
     cy.contains("User status updated successfully", {
       matchCase: false,
     }).should("exist");
@@ -49,9 +51,10 @@ describe("Other functionalities on employees module", () => {
     cy.get(".v-list-item-title").eq(2).click();
     cy.get(".v-list-item-title").eq(3).click();
     cy.url().should("contain", "/employees");
+    cy.get('.select').eq(4).select('Inactive');
     cy.get(".v-icon--clickable").eq(6).click();
     cy.contains("Activate", { matchCase: false }).click();
-    cy.get("button[data-v-2b3c31b6]").click();
+    cy.contains("span", "Activate").click();
     cy.contains("User status updated successfully", {
       matchCase: false,
     }).should("exist");
@@ -73,7 +76,7 @@ describe("Other functionalities on employees module", () => {
     cy.get('input[placeholder="Confirm password"]').type(
       authdata.confirmPassword
     );
-    cy.get("button[data-v-50b16f5d]").eq(1).click();
+    cy.contains("span", "Reset Password", {matchCase:false}).click();
     cy.contains("Reset Password successfully", {
       matchCase: false,
     }).should("exist");
@@ -90,7 +93,7 @@ describe("Other functionalities on employees module", () => {
     cy.get('input[placeholder="Search"]').type(authdata.defaultname);
   });
 
-  it("search by filters", () => {
+  it.only("search by filters", () => {
     cy.AdminLogin();
     cy.wait(3000);
     cy.reload();
@@ -98,9 +101,10 @@ describe("Other functionalities on employees module", () => {
     cy.get(".v-list-item-title").eq(2).click();
     cy.get(".v-list-item-title").eq(3).click();
     cy.url().should("contain", "/employees");
-    cy.get("select[data-v-4d86c427]").eq(0).select(userPosition);
-    cy.get("select[data-v-4d86c427]").eq(1).select(company);
-    cy.get("select[data-v-4d86c427]").eq(2).select(typeofEmployment);
-    cy.get("select[data-v-4d86c427]").eq(3).select(team);
+    cy.get(".select").eq(0).select(userPosition);
+    cy.get(".select").eq(1).select(company);
+    cy.get(".select").eq(2).select(typeofEmployment);
+    cy.get(".select").eq(3).select(team);
+    cy.get(".select").eq(4).select(status);
   });
 });

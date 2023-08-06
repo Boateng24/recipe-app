@@ -2,8 +2,8 @@ export const HRSelectors = {
   accordionIcon: ".v-btn__content",
   settingsTab: "Settings",
   hrconfigTab: "HR Configurations",
-  addButton: "[data-v-50b16f5d]",
+  addButton: '"span", "Add"',
   taskInput: "#input-field",
-  addTaskButton: "[data-v-50b16f5d]",
+  addTaskButton: '"span", "Add"',
   editIcon: ".v-icon--clickable",
 };
