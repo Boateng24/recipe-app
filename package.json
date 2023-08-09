@@ -7,7 +7,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "rm -rf cypress/reports && cypress run runTests && yarn generate-report && yarn merge-reports yarn open:report",
+    "test": "rm -rf cypress/reports && yarn test:run && yarn generate-report && yarn merge-reports yarn open:report",
     "test:open": "cypress open",
     "test:run": "cypress run",
     "generate-report": "yarn mochawesome-merge cypress/reports/mochawesome/.jsons/*.json > cypress/reports/mochawesome/mochawesome.json",
